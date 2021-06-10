@@ -5,8 +5,8 @@ import {
   FriendListItemStatus
 } from './FriendListItemStyled';
 
-export const FriendListItem = ({avatar, name, isOnline, id}) => (
-  <FriendListItemContainer key={id}>
+export const FriendListItem = ({avatar, name, isOnline}) => (
+  <FriendListItemContainer>
     <FriendListItemStatus isOnline={isOnline} />
     <img className="avatar" src={avatar} alt="" width="48" />
     <p className="name">{name}</p>
@@ -16,6 +16,5 @@ export const FriendListItem = ({avatar, name, isOnline, id}) => (
 FriendListItem.propTypes = {
   avatar: PropTypes.string,
   name: PropTypes.string.isRequired,
-  isOnline: PropTypes.bool.isRequired,
-  id: PropTypes.number.isRequired
+  isOnline: PropTypes.bool.isRequired
 };

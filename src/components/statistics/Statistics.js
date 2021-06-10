@@ -4,7 +4,9 @@ import {StatisticsContainer} from './StatisticsStyled';
 
 const Statistics = ({title, stats}) => (
   <StatisticsContainer>
-    {title !== undefined && <h2 className="title">{title}</h2>}
+    {title !== undefined && title !== null && title !== 0 && (
+      <h2 className="title">{title}</h2>
+    )}
 
     <ul className="stat-list">
       {stats.map(stat => (
@@ -18,7 +20,8 @@ const Statistics = ({title, stats}) => (
 );
 
 Statistics.propTypes = {
-  items: PropTypes.arrayOf(
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
